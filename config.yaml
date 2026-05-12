@@ -12,8 +12,8 @@ model:
 
 # ---------- 仓库配置 ----------
 repo:
-  # 你的 fork 仓库地址
-  fork_url: https://github.com/YOUR_USERNAME/home.git
+  # 你的 fork 仓库地址 (支持 HTTPS 或 SSH 格式)
+  fork_url: git@github.com:huanghe123123/home.git
   # 上游源仓库地址 (学生会网站)
   upstream_url: https://github.com/ZJU-CSSU-Dev/home.git
   # 分支名称

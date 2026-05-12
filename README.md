@@ -115,7 +115,7 @@ webhook:
 
 ### 通知分类
 
-默认 8 个分类，对应网站 `docs/Notification/` 目录下的文件：
+默认 5 个分类，对应网站 `docs/Notification/` 目录下的文件：
 
 | 分类 Key | 名称 | 文件 |
 |---------|------|------|
@@ -124,9 +124,6 @@ webhook:
 | Growth | 形策二课 | Growth/PolicyAndSecondCourse.md |
 | Research | 学业科研 | Research/SchoolworkResearch.md |
 | Career | 就业发展 | Career/Career.md |
-| Campus | 校园信息 | Campus/Logistics.md |
-| Exchange | 对外交流 | Exchange/PublicExchange.md |
-| Activities | 文体活动 | Activities/CampusCulture.md |
 
 可在 `config.yaml` 的 `categories` 段自定义。
 
