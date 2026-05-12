@@ -1,0 +1,75 @@
+# ============================================================
+# UpdateBot 配置文件
+# 修改此文件后重启服务即可生效
+# ============================================================
+
+# ---------- 模型配置 ----------
+model:
+  # LLM API 地址 (OpenAI 兼容接口)
+  url: https://api.openai.com/v1
+  # 模型名称
+  name: gpt-4o
+
+# ---------- 仓库配置 ----------
+repo:
+  # 你的 fork 仓库地址
+  fork_url: https://github.com/YOUR_USERNAME/home.git
+  # 上游源仓库地址 (学生会网站)
+  upstream_url: https://github.com/ZJU-CSSU-Dev/home.git
+  # 分支名称
+  branch: main
+
+# ---------- 日程配置 ----------
+schedule:
+  # 一周中哪些天接收并处理通知 (1=周一, 2=周二, ..., 7=周日)
+  update_days: [1, 2, 3, 4, 5]
+  # 每日推送更新到 fork 仓库的时间 (HH:MM 格式, 24小时制)
+  push_time: "22:30"
+
+# ---------- 路径配置 ----------
+paths:
+  # 学生会网站仓库的本地路径 (工作目录)
+  work_dir: /home/yt/ytprojects/cssu/home
+  # .env 文件的路径 (存放 API Key 和 PAT)
+  env_file: /home/yt/ytprojects/cssu/updatebot/.env
+  # Python 解释器路径
+  python_path: /home/yt/miniconda3/bin/python3
+
+# ---------- Webhook 配置 ----------
+webhook:
+  # 监听地址
+  host: "0.0.0.0"
+  # 监听端口
+  port: 8080
+  # SMSForwarder 的 secret (可选, 留空则不验证签名)
+  secret: ""
+
+# ---------- 通知分类 ----------
+# 每个分类对应 Notification 目录下的一个 md 文件
+# LLM 会据此对通知进行分类
+categories:
+  - key: Academic
+    name: 教学事务
+    file: Academic/Academic.md
+    description: 选课、考试、培养方案、毕业设计、论文等教学相关通知
+  - key: Awards
+    name: 评优评先和资助
+    file: Awards/Awards.md
+    description: 奖学金、助学金、评奖评优、勤工助学、贷学金、荣誉称号评选、资助等
+  - key: Growth
+    name: 形策二课
+    file: Growth/PolicyAndSecondCourse.md
+    description: 形势与政策、第二课堂、第三课堂、心理健康、志愿者、年级大会等
+  - key: Research
+    name: 学业科研
+    file: Research/SchoolworkResearch.md
+    description: 科研训练、学科竞赛、学术讲座、暑研、考研保研、招生宣讲、SQTP、体测等
+  - key: Career
+    name: 就业发展
+    file: Career/Career.md
+    description: 就业招聘、实习、宣讲会、入伍、西部计划、选调生等职业发展通知
+
+# ---------- 通知配置 ----------
+notification:
+  # 通知文档在仓库中的相对路径
+  base_dir: docs/Notification
